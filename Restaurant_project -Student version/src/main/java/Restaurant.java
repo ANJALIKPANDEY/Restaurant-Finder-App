@@ -70,5 +70,8 @@ public class Restaurant {
         return name;
     }
 
+    public int totalValue(String itemName){
+        return  0;
+    }
 
 }

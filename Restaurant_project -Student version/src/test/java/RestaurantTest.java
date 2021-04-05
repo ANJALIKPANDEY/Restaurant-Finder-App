@@ -30,7 +30,32 @@ class RestaurantTest {
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    //<<<<<<<<<<<<<<<<<<<<<<<<<ORDER TOTAL>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    @Test
+    public void selected_items_should_return_total_order_value(){
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+        restaurant.addToMenu("Sizzling brownie",319);
+
+        int selectedItemsTotal = 119 + 269;
+
+        assertEquals(selectedItemsTotal, restaurant.totalValue("Sweet corn soup, Vegetable lasagne"));
+    }
+
+    @Test
+    public void if_no_items_are_selected_should_return_zero_as_total_order_value(){
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+        restaurant.addToMenu("Sizzling brownie",319);
+
+        int selectedItemsTotal = 0;
+
+        assertEquals(selectedItemsTotal, restaurant.totalValue("No item is selected"));
+
+    }
+
+    //<<<<<<<<<<<<<<<<<<<<<<<<<ORDER TOTAL>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
